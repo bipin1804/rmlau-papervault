@@ -193,8 +193,7 @@ const handleLogout = async () => {
   )}
 
 </div>
-    </ul>
-  )}
+  
 </div>
 
 </nav>
