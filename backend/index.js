@@ -29,9 +29,11 @@ import paper from './models/paper.js';
 import User from "./models/user.js"
 
 app.use(cors({
-    origin: 'http://localhost:5173',
-    https://rmlau-papervault-teal.vercel.app/
-        credentials: true
+  origin: [
+    "http://localhost:5173",
+    "https://rmlau-papervault-teal.vercel.app"
+  ],
+  credentials: true
 }));
 
 app.use("/uploads", express.static(path.resolve("uploads")));
