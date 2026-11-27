@@ -30,6 +30,7 @@ import User from "./models/user.js"
 
 app.use(cors({
     origin: 'http://localhost:5173',
+    https://rmlau-papervault-teal.vercel.app/
         credentials: true
 }));
 
