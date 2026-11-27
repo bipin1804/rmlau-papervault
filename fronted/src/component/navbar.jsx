@@ -4,6 +4,7 @@ import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useNavigate } from "react-router-dom";
 import apiclient from '../api/api.js'
+import CloseIcon from '@mui/icons-material/Close';
 
 
 import { useContext } from "react"
@@ -130,39 +131,68 @@ const handleLogout = async () => {
 
 
 
+
 <div className="relative flex items-center justify-center md:hidden">
-  <MenuIcon
-    onClick={() => seticon(!icon)}
-    className="cursor-pointer"
-  />
+
+  {!icon ? (
+    <MenuIcon
+      onClick={() => seticon(true)}
+      className="cursor-pointer"
+    />
+  ) : (
+    <CloseIcon
+      onClick={() => seticon(false)}
+      className="cursor-pointer"
+    />
+  )}
 
   {icon && (
-    <ul className="absolute top-14 right-0 z-50 flex flex-col gap-5 w-48 bg-white shadow-lg rounded-lg p-5">
+    <div className="absolute top-10 right-0 z-50 w-48 bg-white shadow-lg rounded-lg overflow-hidden">
 
-      <NavLink to="/"
-        className={({ isActive }) =>
-          isActive ? "text-blue-600 font-bold" : "text-gray-700"
-        }>
-        <li>Home</li>
-      </NavLink>
+      <ul className="flex flex-col">
 
-      <NavLink to="/paper"
-        className={({ isActive }) =>
-          isActive ? "text-blue-600 font-bold" : "text-gray-700"
-        }>
-        <li>Browse Paper</li>
-      </NavLink>
+        <NavLink
+          to="/"
+          onClick={() => seticon(false)}
+          className={({ isActive }) =>
+            `px-5 py-3 hover:bg-gray-100 ${
+              isActive ? "text-blue-600 font-bold" : "text-gray-700"
+            }`
+          }
+        >
+          <li>Home</li>
+        </NavLink>
 
+        <NavLink
+          to="/year"
+          onClick={() => seticon(false)}
+          className={({ isActive }) =>
+            `px-5 py-3 hover:bg-gray-100 ${
+              isActive ? "text-blue-600 font-bold" : "text-gray-700"
+            }`
+          }
+        >
+          <li>Browse Paper</li>
+        </NavLink>
 
-      <NavLink to="/about"
-        className={({ isActive }) =>
-          isActive ? "text-blue-600 font-bold" : "text-gray-700"
-        }>
-        <li>About Us</li>
-      </NavLink>
+        <NavLink
+          to="/about"
+          onClick={() => seticon(false)}
+          className={({ isActive }) =>
+            `px-5 py-3 hover:bg-gray-100 ${
+              isActive ? "text-blue-600 font-bold" : "text-gray-700"
+            }`
+          }
+        >
+          <li>About Us</li>
+        </NavLink>
 
+      </ul>
 
+    </div>
+  )}
 
+</div>
     </ul>
   )}
 </div>
