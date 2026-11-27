@@ -1,3 +1,4 @@
+
 import { assert } from "../assets/assert";
 import { NavLink } from "react-router-dom";
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
@@ -5,7 +6,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { useNavigate } from "react-router-dom";
 import apiclient from '../api/api.js'
 import CloseIcon from '@mui/icons-material/Close';
-
 
 import { useContext } from "react"
 import { useState } from "react";
@@ -58,6 +58,8 @@ const handleLogout = async () => {
 </div>
 
     <ul className="hidden md:flex gap-7 items-center justify-center">
+
+
 
       <NavLink to="/"
         className={({ isActive }) =>
@@ -132,6 +134,7 @@ const handleLogout = async () => {
 
 
 
+
 <div className="relative flex items-center justify-center md:hidden">
 
   {!icon ? (
@@ -192,8 +195,6 @@ const handleLogout = async () => {
     </div>
   )}
 
-</div>
-  
 </div>
 
 </nav>
